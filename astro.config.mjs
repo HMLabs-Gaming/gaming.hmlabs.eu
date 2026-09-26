@@ -23,7 +23,7 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/henrymmey",
+          href: "https://github.com/HenryMM-Gaming",
         },
         {
           icon: "link",
