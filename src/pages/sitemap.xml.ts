@@ -15,7 +15,7 @@ const escapeXml = (value: string) =>
   );
 
 export const GET: APIRoute = async ({ site }) => {
-  const baseUrl = site ?? new URL("https://gaming.henrymeyer.de");
+  const baseUrl = site ?? new URL("https://gaming.hmlabs.eu");
   const entries = await getCollection("docs");
   const urls = entries.map(({ id }) => {
     const route = id.replace(/(?:^|\/)index$/, "");

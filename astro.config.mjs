@@ -4,10 +4,10 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://gaming.henrymeyer.de",
+  site: "https://gaming.hmlabs.eu",
   integrations: [
     starlight({
-      title: "HenryMM Gaming",
+      title: "HMLabs Gaming",
       favicon: "/favicon.ico",
       components: {
         Footer: "./src/components/Footer.astro",
@@ -28,7 +28,7 @@ export default defineConfig({
         {
           icon: "link",
           label: "Modrinth",
-          href: "https://modrinth.com/user/henrymmey",
+          href: "https://modrinth.com/organization/9zYhowm8",
         },
         {
           icon: "link",

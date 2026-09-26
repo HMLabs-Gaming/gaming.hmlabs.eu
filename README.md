@@ -1,7 +1,7 @@
 # gaming-site
 
 The gaming documentation site for [henrymeyer.de](https://henrymeyer.de), built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
-The site documents HenryMM gaming projects, including Minecraft modpacks and resource packs. It is available at [gaming.henrymeyer.de](https://gaming.henrymeyer.de).
+The site documents HenryMM gaming projects, including Minecraft modpacks and resource packs. It is available at [gaming.hmlabs.eu](https://gaming.hmlabs.eu).
 
 ## Tech stack
 
@@ -52,7 +52,7 @@ This application currently does not require environment variables. Do not commit
 
 ## Deployment
 
-Astro generates a static site in `dist/` with `pnpm build`. The production site is configured with the canonical URL [https://gaming.henrymeyer.de](https://gaming.henrymeyer.de). Deployment provider configuration is managed outside this application directory.
+Astro generates a static site in `dist/` with `pnpm build`. The production site is configured with the canonical URL [https://gaming.hmlabs.eu](https://gaming.hmlabs.eu). Deployment provider configuration is managed outside this application directory.
 
 ## License
 

@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = ({ site }) => {
-  const baseUrl = site ?? new URL("https://gaming.henrymeyer.de");
+  const baseUrl = site ?? new URL("https://gaming.hmlabs.eu");
   const sitemapUrl = new URL("sitemap.xml", baseUrl);
 
   return new Response(
