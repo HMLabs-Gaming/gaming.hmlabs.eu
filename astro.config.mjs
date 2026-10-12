@@ -189,8 +189,24 @@ export default defineConfig({
           label: "Mods",
           items: [
             {
+              label: "HM Scoreboard Toggle",
+              collapsed: false,
+              items: [
+                {
+                  label: "Overview",
+                  slug: "projects/mods/hm-scoreboard-toggle",
+                },
+              ],
+            },
+            {
               label: "Attribute PVP Helper Reforged",
-              slug: "projects/mods/attribute-pvp-helper-reforged",
+              collapsed: true,
+              items: [
+                {
+                  label: "Overview",
+                  slug: "projects/mods/attribute-pvp-helper-reforged",
+                },
+              ],
             },
           ],
         },

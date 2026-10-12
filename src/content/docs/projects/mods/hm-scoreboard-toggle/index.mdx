@@ -1,0 +1,41 @@
+---
+title: HM Scoreboard Toggle
+description: A minimal mod that lets you hide or show the vanilla scoreboard with a configurable keybind.
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+<Aside>
+  This mod hasn't been approved by Modrinth and Curseforge yet, so you can't use
+  it with Modrinth right now.
+</Aside>
+
+<div
+  className="project-badges"
+  style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}
+>
+  <a href="https://github.com/henrymmey/hm-scoreboard-toggle">
+    <img
+      src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"
+      alt="Available on GitHub"
+    />
+  </a>
+</div>
+
+A tiny client-side Fabric mod for Minecraft Java Edition 26.2 that does exactly one thing: lets you hide or show the vanilla scoreboard sidebar with a single key press.
+
+## Features
+
+- **One-key toggle:** Press `K` to hide or show the scoreboard.
+- **Customizable keybind:** Change the key in **Options → Controls → Key Binds → HM Scoreboard Toggle**.
+- **Client-side only:** No server installation required.
+- **Vanilla rendering:** The original scoreboard rendering is preserved whenever the sidebar is visible.
+- **No unnecessary features:** No commands, configuration files, chat messages, sounds, or additional network packets.
+- **Simple behavior:** The scoreboard is visible by default after starting Minecraft. Your toggle state lasts for the current client session.
+
+## Installation
+
+1. Install Fabric Loader and Fabric API.
+2. Download the mod JAR and place it in your Minecraft `mods` folder.
+3. Launch your Fabric profile.
+4. Join a world or server and press `K` to toggle the scoreboard.
