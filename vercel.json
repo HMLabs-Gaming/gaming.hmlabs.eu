@@ -71,6 +71,11 @@
       "permanent": true
     },
     {
+      "source": "/hm-scoreboard-toggle",
+      "destination": "/projects/mods/hm-scoreboard-toggle/",
+      "permanent": true
+    },
+    {
       "source": "/hmtsync",
       "destination": "/projects/plugins/hmtsync/",
       "permanent": true

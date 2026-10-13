@@ -190,23 +190,11 @@ export default defineConfig({
           items: [
             {
               label: "HM Scoreboard Toggle",
-              collapsed: false,
-              items: [
-                {
-                  label: "Overview",
-                  slug: "projects/mods/hm-scoreboard-toggle",
-                },
-              ],
+              slug: "projects/mods/hm-scoreboard-toggle",
             },
             {
               label: "Attribute PVP Helper Reforged",
-              collapsed: true,
-              items: [
-                {
-                  label: "Overview",
-                  slug: "projects/mods/attribute-pvp-helper-reforged",
-                },
-              ],
+              slug: "projects/mods/attribute-pvp-helper-reforged",
             },
           ],
         },
