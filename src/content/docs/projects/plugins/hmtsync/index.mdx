@@ -9,6 +9,18 @@ import { Aside } from "@astrojs/starlight/components";
   className="project-badges"
   style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}
 >
+  <a href="https://hangar.papermc.io/HMLabs-Gaming/HMTSync">
+    <img
+      src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/hangar_vector.svg"
+      alt="Available on GitHub"
+    />
+  </a>
+  <a href="https://www.spigotmc.org/resources/hmtsync.139621/">
+    <img
+      src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/spigot_vector.svg"
+      alt="Available on GitHub"
+    />
+  </a>
   <a href="https://github.com/TitanSMP/HMTSync">
     <img
       src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"
@@ -17,11 +29,162 @@ import { Aside } from "@astrojs/starlight/components";
   </a>
 </div>
 
-<Aside>
-  This plugin is still in an early stage of development. We do not recommend
-  using it in a production environment. If you still wish to use it, you will
-  need to compile it yourself from the source code or download it from GitHub
-  Releases, if available.
-</Aside>
+HMT Sync keeps player data consistent across your whole network. When a player moves from one
+server to another, their inventory, health, hunger, experience and much more are carried over
+automatically — no lost items, no duplicated gear, no manual work.
 
-<Aside>More documentation coming soon!</Aside>
+Works on **Paper / Spigot** backends with the **Velocity** proxy.
+
+---
+
+## Features
+
+- **Seamless server switching** — the proxy saves a player's data on the source server _before_
+  they connect to the destination server. No race conditions, no data loss.
+- **No double-login exploits** — a database-level lock guarantees only one server can write a
+  player's data at a time. A crashed server is recovered automatically.
+- **No lag** — all database work runs asynchronously in the background.
+- **Synchronized data (each toggled on or off):**
+  - Health, food level, saturation
+  - Experience (total, current, level)
+  - Inventory and armor
+  - Ender chest
+  - Potion effects
+  - Advancements and statistics
+  - PlayerData (PDC) values
+  - Flight & gamemode, including per-gamemode inventories
+  - Maps (keeps map artwork across servers)
+  - Companions / pets
+  - Location
+- **Optional Redis cache** for faster server switches (SQL stays the source of truth).
+- **Optional economy & playtime sync** via Vault and EssentialsX.
+- **Admin tools** — in-game data inspector, manual lock release and data migration.
+- **Works with MySQL/MariaDB** (recommended for a network) **or SQLite** (single server).
+
+---
+
+## Requirements
+
+- **Minecraft:** Paper 26.3+
+- **Backends:** Paper or Spigot on every server that shares player data
+- **Proxy:** Velocity 3.1+
+- A shared **MySQL/MariaDB** database for a network (SQLite is fine for a single server)
+
+---
+
+## Installation
+
+1. **Download** the JAR that matches the platform:
+
+   | File                              | Where it goes                                      |
+   | --------------------------------- | -------------------------------------------------- |
+   | `hmt-sync-<version>-spigot.jar`   | `plugins/` folder of **every Paper/Spigot server** |
+   | `hmt-sync-<version>-velocity.jar` | `plugins/` folder of your **Velocity proxy**       |
+
+2. **Start each server once** so the plugin generates its `plugins/HMTSync/config.yml`.
+
+3. **Configure each backend** — set your database credentials and give every server a **unique
+   `server-id`** (the proxy needs no `server-id`).
+
+4. **Restart** the proxy and all servers.
+
+That's it — player data will now follow players between your servers.
+
+---
+
+## Configuration
+
+The important settings in `plugins/HMTSync/config.yml`:
+
+```yaml
+database:
+  type: mysql # "mysql" or "sqlite"
+  host: localhost
+  port: 3306
+  database: minecraft
+  username: user
+  password: password
+  sqlite-file: "player_data.db"
+
+# A unique name for THIS server. Every backend sharing the database needs its own.
+server-id: "survival-1"
+
+# Which data to synchronize. Turn on what you need.
+sync-data:
+  health: true
+  food-level: true
+  experience: true
+  inventory: true
+  armor: true
+  potion-effects: true
+  ender-chest: false
+  location: false
+  advancements: false
+  statistics: false
+  pdc: false
+  flight-gamemode: false
+  companions: false
+  maps: false
+  separate-gamemode-inventories: false
+  economy: false
+  playtime: false
+
+# Optional Redis cache (leave disabled to use SQL only).
+redis:
+  enabled: false
+  host: localhost
+  port: 6379
+  password: ""
+  storage-strategy: "mysql-only" # or "redis-mysql-hybrid"
+```
+
+**Tips**
+
+- Give every server a different `server-id` (e.g. `survival-1`, `creative`, `lobby`).
+- Keep the same database settings on every backend.
+- Change `security.seed` to a long random string before going public.
+- Newer features (`ender-chest`, `maps`, `economy`, `playtime`, …) are **off by default** —
+  enable them only if you want them.
+
+---
+
+## Commands
+
+On a backend server:
+
+| Command                              | Description                                     |
+| ------------------------------------ | ----------------------------------------------- |
+| `/hmtsync unlock <player>`           | Release a stuck data lock for a player          |
+| `/hmtsync inspect <player>`          | Open the data inspector for a player            |
+| `/hmtsync invsee <player>`           | View (or edit) a player's inventory             |
+| `/hmtsync endersee <player>`         | View (or edit) a player's ender chest           |
+| `/hmtsync migrate <source> <target>` | Move data from one identity to another          |
+| `/hmtsync-debug status`              | Show plugin, economy, playtime and Redis status |
+
+On the proxy (Velocity):
+
+| Command                    | Description                             |
+| -------------------------- | --------------------------------------- |
+| `/hmtsync unlock <player>` | Relay an unlock request to the backends |
+
+---
+
+## Permissions
+
+| Permission             | Default | Description                                         |
+| ---------------------- | ------- | --------------------------------------------------- |
+| `hmtsync.admin`        | op      | Admin commands, unlock/migrate and debug tools      |
+| `hmtsync.inspect`      | op      | View-only inspection of player data and inventories |
+| `hmtsync.inspect.edit` | op      | Editing of player data and inventories              |
+
+---
+
+## Optional integrations
+
+- **Redis** — enable the hybrid cache to make server switches faster.
+- **Vault + an economy plugin** — enable `sync-data.economy` to sync balances
+  (do **not** enable if another plugin already syncs money).
+- **EssentialsX** — enable `sync-data.playtime` to sync playtime.
+- **FastLogin / AuthMe** — optionally auto-migrate data for cracked→premium transitions.
+
+All integrations are optional and are simply ignored if the backing plugin is not installed.
