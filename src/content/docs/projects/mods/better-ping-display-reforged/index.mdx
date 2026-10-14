@@ -1,0 +1,57 @@
+---
+title: Better Ping Display Reforged
+description: Adds a configurable numerical ping display to the player list.
+---
+
+import { Aside } from "@astrojs/starlight/components";
+
+<Aside>
+  This mod hasn't been approved by Modrinth and CurseForge yet, so you can't use
+  it with them right now.
+</Aside>
+
+<div
+  className="project-badges"
+  style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}
+>
+  <a href="https://github.com/henrymmey/better-ping-display-reforged">
+    <img
+      src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/github_vector.svg"
+      alt="Available on GitHub"
+    />
+  </a>
+</div>
+
+Better Ping Display Reforged is a client-side Fabric mod that displays each player's latency as a number in the Minecraft player list. The server does not need the mod installed, and it works on vanilla servers.
+
+This project continues the original [Better Ping Display [Fabric]](https://modrinth.com/project/MS1ZMyR7) project by Vlad Marica. It is a community-maintained port and is not the original author's project.
+
+## Compatibility
+
+- Minecraft Java Edition **26.2**-**26.3**
+- Fabric Loader **0.19.5 or newer**
+
+## Installation
+
+1. Install Fabric Loader for your Minecraft version.
+2. Download the Better Ping Display Reforged jar for your Minecraft version from this repository's Releases.
+3. Put the jar in your Minecraft `mods` folder and launch the Fabric profile.
+
+Mod Menu and YetAnotherConfigLib (YACL) are optional. Install compatible versions of both to open the in-game settings screen from Mod Menu. Without them, the mod uses the values in `config/betterpingdisplay.json`.
+
+## Configuration
+
+The config file is `config/betterpingdisplay.json` and has these options:
+
+| Option                 |   Default | Description                                          |
+| ---------------------- | --------: | ---------------------------------------------------- |
+| `autoColorPingText`    |    `true` | Color the ping text according to latency.            |
+| `renderPingBars`       |   `false` | Also render Minecraft's regular ping bars.           |
+| `pingTextColor`        | `#A0A0A0` | Text color when automatic coloring is disabled.      |
+| `pingTextFormatString` |    `%dms` | Format string for the latency; it must contain `%d`. |
+
+## Credits and license
+
+This project is based on [Better Ping Display [Fabric]](https://modrinth.com/project/MS1ZMyR7), originally created by Vlad Marica. Original package names and the original copyright notice are retained. The project remains under the original MIT License; see [LICENSE](https://github.com/HMLabs-Gaming/better-ping-display-reforged?tab=MIT-1-ov-file).
+
+Repository: [henrymmey/better-ping-display-reforged](https://github.com/henrymmey/better-ping-display-reforged)

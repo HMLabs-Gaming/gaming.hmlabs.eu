@@ -196,6 +196,10 @@ export default defineConfig({
               label: "Attribute PVP Helper Reforged",
               slug: "projects/mods/attribute-pvp-helper-reforged",
             },
+            {
+              label: "Better Ping Display Reforged",
+              slug: "projects/mods/better-ping-display-reforged",
+            },
           ],
         },
         {
