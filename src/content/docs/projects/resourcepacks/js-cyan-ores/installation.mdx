@@ -12,8 +12,7 @@ import {
 } from "@astrojs/starlight/components";
 
 <Aside>
-  Some resource packs haven't been approved by Modrinth yet, so you can't
-  download it right now.
+  Currently, only the Diamond version is available. The other versions will be available shortly.
 </Aside>
 
 Choose one of the soon four resource pack versions. Only use one version at a time
@@ -23,10 +22,23 @@ to avoid conflicting textures.
 
 ### Diamond
 
-<CardGrid>
-  <LinkCard title="Modrinth" href="https://modrinth.com/project/AkG5WZnx" />
-</CardGrid>
-
+<div
+  className="project-badges"
+  style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}
+>
+  <a href="https://modrinth.com/project/AkG5WZnx">
+    <img
+      src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/modrinth_vector.svg"
+      alt="Available on Modrinth"
+    />
+  </a>
+  <a href="https://github.com/HMLabs-Gaming/js-cyan-diamond-ore">
+    <img
+      src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/available/github_vector.svg"
+      alt="Available on GitHub"
+    />
+  </a>
+</div>
 ## Installation
 
 <Tabs>
