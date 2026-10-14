@@ -6,6 +6,7 @@
   </nav>
   <p>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</p>
   <p class="copyright">&copy; 2026 Henry Meyer.</p>
+  <p>A <a href="https://hmlabs.eu/">HMLabs</a> Project.</p>
   <p class="license">
     Code licensed under MIT &bull; Content under CC BY 4.0 &bull; Icons &amp; Logos All Rights Reserved.
   </p>
@@ -17,6 +18,10 @@
     margin: 2rem auto 0;
     max-width: var(--sl-content-width);
     padding: 1.5rem var(--sl-content-pad-x) 2rem;
+  }
+
+  :global(main:has(.hero) footer) {
+    margin-top: max(2rem, 16vh);
   }
 
   nav {
