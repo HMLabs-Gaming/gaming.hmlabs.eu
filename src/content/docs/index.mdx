@@ -19,6 +19,7 @@ hero:
       icon: external
       variant: minimal
 ---
+
 import github from "../../assets/badges/github.png";
 import modrinth from "../../assets/badges/modrinth-color.png";
 import curseforge from "../../assets/badges/curseforge.svg";
@@ -29,32 +30,211 @@ import workflows from "../../assets/badges/icons8-globe.png";
 import discord from "../../assets/badges/discord-color.png";
 import email from "../../assets/badges/icons8-email.png";
 
-<section aria-label="HMLabs Gaming links" style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.75rem", margin: "-1rem auto 0", maxWidth: "52rem" }}>
-  <a href="https://github.com/HMLabs-Gaming" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={github.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>GitHub</span>
+<section
+  aria-label="HMLabs Gaming links"
+  style={{
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    gap: "0.75rem",
+    margin: "-1rem auto 0",
+    maxWidth: "52rem",
+  }}
+>
+  <a
+    href="https://github.com/HMLabs-Gaming"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={github.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>GitHub</span>
   </a>
-  <a href="https://modrinth.com/organization/9zYhowm8" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={modrinth.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>Modrinth</span>
+  <a
+    href="https://modrinth.com/organization/9zYhowm8"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={modrinth.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>Modrinth</span>
   </a>
-  <a href="https://www.curseforge.com/members/henrymmey/projects" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={curseforge.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>CurseForge</span>
+  <a
+    href="https://www.curseforge.com/members/henrymmey/projects"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={curseforge.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>CurseForge</span>
   </a>
-  <a href="https://www.spigotmc.org/members/henrymmey.2623317/" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={spigot.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>SpigotMC</span>
+  <a
+    href="https://hangar.papermc.io/HMLabs-Gaming"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={hangar.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>Hangar</span>
   </a>
-  <a href="https://hangar.papermc.io/HMLabs-Gaming" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={hangar.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>Hangar</span>
+  <a
+    href="https://www.spigotmc.org/members/henrymmey.2623317/"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={spigot.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>SpigotMC</span>
   </a>
-  <a href="https://www.planetminecraft.com/member/henrymmey/" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={planetMinecraft.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>Planet Minecraft</span>
+  <a
+    href="https://www.planetminecraft.com/member/henrymmey/"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={planetMinecraft.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>Planet Minecraft</span>
   </a>
-  <a href="https://release-workflows.gaming.hmlabs.eu/" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={workflows.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>Release Workflows</span>
+  <a
+    href="https://release-workflows.gaming.hmlabs.eu/"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={workflows.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>Release Workflows</span>
   </a>
-  <a href="https://discord.gg/fuAx3waeHp" target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={discord.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>Discord</span>
+  <a
+    href="https://discord.gg/fuAx3waeHp"
+    target="_blank"
+    rel="noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={discord.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>Discord</span>
   </a>
-  <a href="mailto:hello@hmlabs.eu" style={{ display: "inline-flex", alignItems: "center", gap: "0.55rem", padding: "0.55rem 0.8rem", border: "1px solid var(--sl-color-gray-5)", borderRadius: "0.6rem", color: "var(--sl-color-text)", textDecoration: "none" }}>
-    <img src={email.src} alt="" style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }} /> <span>Contact</span>
+  <a
+    href="mailto:hello@hmlabs.eu"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "0.55rem",
+      padding: "0.55rem 0.8rem",
+      border: "1px solid var(--sl-color-gray-5)",
+      borderRadius: "0.6rem",
+      color: "var(--sl-color-text)",
+      textDecoration: "none",
+    }}
+  >
+    <img
+      src={email.src}
+      alt=""
+      style={{ width: "1.5rem", height: "1.5rem", objectFit: "contain" }}
+    />{" "}
+    <span>Contact</span>
   </a>
 </section>
