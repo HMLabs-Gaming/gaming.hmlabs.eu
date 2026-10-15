@@ -1,65 +1,94 @@
-# gaming-site
+# HMLabs Gaming Website
 
-The gaming documentation site for [henrymeyer.de](https://henrymeyer.de), built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
-The site documents HenryMM gaming projects, including Minecraft modpacks and resource packs. It is available at [gaming.hmlabs.eu](https://gaming.hmlabs.eu).
+The documentation site for HMLabs-Gaming, published at
+[gaming.hmlabs.eu](https://gaming.hmlabs.eu). It is built with [Astro](https://astro.build)
+and [Starlight](https://starlight.astro.build).
 
-## Tech stack
+The site currently documents:
 
-- [Astro](https://astro.build) with static output
-- [Starlight](https://starlight.astro.build) for documentation navigation and search
-- Markdown and [MDX](https://mdxjs.com) content
+- Modpacks
+- Resource packs
+- Mods
+- Plugins
 
-## Getting started
+## Requirements
 
-From the repository root:
+- Node.js LTS
+- npm
 
-```bash
-# Install dependencies
-pnpm install
+## Development
 
-# Start the development server
-pnpm dev:gaming-site
-```
-
-Or from within this directory:
+Install dependencies and start the development server from this directory:
 
 ```bash
-pnpm dev
+npm install
+npm run dev
 ```
 
-Open [http://localhost:4321](http://localhost:4321) in your browser.
+The site is available at [http://localhost:4321](http://localhost:4321). Astro watches the
+source files and reloads the page as you work.
 
-## Scripts
+## Commands
 
-| Command        | Description                          |
-| -------------- | ------------------------------------ |
-| `pnpm dev`     | Start the development server         |
-| `pnpm build`   | Create a production build in `dist/` |
-| `pnpm preview` | Serve the production build locally   |
-| `pnpm start`   | Start the development server         |
-| `pnpm astro`   | Run the Astro CLI                    |
+| Command           | Description                        |
+| ----------------- | ---------------------------------- |
+| `npm run dev`     | Start the development server       |
+| `npm run build`   | Build the static site into `dist/` |
+| `npm run preview` | Serve the production build locally |
+| `npm run start`   | Alias for the development server   |
+| `npm run astro`   | Run the Astro CLI                  |
 
-From the repository root, use `pnpm build:gaming-site` to build this workspace.
+The production build is the project's automated validation check. There is currently no
+separate lint or test script.
 
-## Content
+## Project structure
 
-Documentation pages live in `src/content/docs/` as `.md` or `.mdx` files. Site metadata, custom components, and the Starlight sidebar are configured in `astro.config.mjs`.
-See [contributing.md](./contributing.md) for content guidelines, navigation instructions, validation steps, and pull request expectations.
+```text
+public/                  Files served directly, including browser scripts
+src/assets/              Project artwork and badges
+src/components/          Custom Astro and Starlight components
+src/content/docs/        Markdown and MDX documentation pages
+src/content.config.ts    Content collection configuration
+astro.config.mjs         Site metadata, integrations, and sidebar
+vercel.json              Legacy project redirects
+```
 
-## Environment variables
+Documentation pages are created below `src/content/docs/`. Their paths become site URLs;
+for example, `src/content/docs/projects/modpacks/hmt-pack/installation.mdx` is available at
+`/projects/modpacks/hmt-pack/installation/`. Add pages to the sidebar in
+`astro.config.mjs` when they should appear in site navigation.
 
-This application currently does not require environment variables. Do not commit secrets or local environment files.
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for writing guidance, navigation updates, asset
+conventions, validation steps, and pull request expectations. For a local production check,
+run:
+
+```bash
+npm run build
+```
+
+The site does not require environment variables. Do not commit secrets, local environment
+files, or generated `dist/` output.
 
 ## Deployment
 
-Astro generates a static site in `dist/` with `pnpm build`. The production site is configured with the canonical URL [https://gaming.hmlabs.eu](https://gaming.hmlabs.eu). Deployment provider configuration is managed outside this application directory.
+Astro generates a static site in `dist/`. The canonical URL is configured in
+`astro.config.mjs`, and `vercel.json` preserves redirects from older project URLs to their
+current documentation pages. Deployment is handled by the hosting configuration for the
+site.
+
+## Links
+
+- [Live site](https://gaming.hmlabs.eu)
+- [GitHub organization](https://github.com/HMLabs-Gaming)
+- [Discord community](https://discord.gg/EHU4YMaHGT)
+- [Modrinth organization](https://modrinth.com/organization/9zYhowm8)
+- [CurseForge projects](https://www.curseforge.com/members/henrymmey/projects)
 
 ## License
 
-Refer to the repository and package licensing information before reusing code or content. This application does not currently include a local `LICENSE` file.
-
-## Learn more
-
-- [Astro documentation](https://docs.astro.build)
-- [Starlight documentation](https://starlight.astro.build/)
-- [Astro Discord](https://astro.build/chat)
+This repository uses a multi-license model. Source code, configuration, and scripts are
+licensed under [MIT](./LICENSE); written documentation is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/);
+and logos, icons, project artwork, and other branding assets are All Rights Reserved. See
+[LICENSE](./LICENSE) for the complete terms.
