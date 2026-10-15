@@ -76,6 +76,11 @@
       "permanent": true
     },
     {
+      "source": "/better-ping-display-reforged",
+      "destination": "/projects/mods/better-ping-display-reforged/",
+      "permanent": true
+    },
+    {
       "source": "/hmtsync",
       "destination": "/projects/plugins/hmtsync/",
       "permanent": true
