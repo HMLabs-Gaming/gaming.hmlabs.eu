@@ -23,17 +23,12 @@ export default defineConfig({
         {
           icon: "github",
           label: "GitHub",
-          href: "https://github.com/HenryMM-Gaming",
+          href: "https://github.com/HMLabs-Gaming",
         },
         {
           icon: "link",
-          label: "Modrinth",
-          href: "https://modrinth.com/organization/9zYhowm8",
-        },
-        {
-          icon: "link",
-          label: "Curseforge",
-          href: "https://www.curseforge.com/members/henrymmey",
+          label: "Links",
+          href: "https://hmlabs.eu/links",
         },
       ],
       sidebar: [
