@@ -246,10 +246,6 @@ export default defineConfig({
                 },
               ],
             },
-            {
-              label: "HMTSync",
-              slug: "projects/plugins/hmtsync",
-            },
           ],
         },
         {
